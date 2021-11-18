@@ -1,11 +1,3 @@
-"""
-This code is broken!
-Daniel had too many beers and forgot how programming works
-ribbit ribbit
-This is not the most efficient implementation
-its up to you if you want to rewrite the whole program
-Good luck!
-"""
 import random
 
 wins = 0
@@ -13,6 +5,7 @@ looses = 0
 
 
 def win_or_lose(player_input, computer_play, lost):
+    """Checks who won the game"""
     global looses
     global wins
 
@@ -36,6 +29,7 @@ def win_or_lose(player_input, computer_play, lost):
 
 
 def who_won(play_num, lost_num, win_num):
+    """After all the games have been played, this function checks who won the most"""
     print("We played", str(play_num), "time(s). You won", str(win_num), "time(s) and we tied",
           str(play_num-lost_num-win_num), ".")
 
@@ -49,7 +43,7 @@ def who_won(play_num, lost_num, win_num):
         print("We tied. Only because you did not want to keep playing, ribbit.")
 
 
-loosing_condition = {
+loosing_condition = {  
     "Rock": "Paper",
     "Paper": "Scissors",
     "Scissors": "Rock",
@@ -64,12 +58,12 @@ verbs = {
 
 
 play = input("Hello there 𓆏 ribbit! Do you want to play a game of rock, paper, scissors with me? Say yes (\"Y\") if "
-             "you do. ribbit\n")
+             "you do. ribbit\n").capitalize()
 
 counter = 0
 
-while play.capitalize() == "Y" or play.capitalize() == "Yes":     # accepts any variation of "yes"
-    computer = random.choice(list(loosing_condition.items()))
+while play == "Y" or play == "Yes":     # accepts any variation of "yes"
+    computer = random.choice(list(loosing_condition.items()))[0]
 
     player = input("Rock, Paper, Scissors, Frog?\n").capitalize()
 

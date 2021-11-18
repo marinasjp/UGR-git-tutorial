@@ -58,11 +58,11 @@ verbs = {
 
 
 play = input("Hello there 𓆏 ribbit! Do you want to play a game of rock, paper, scissors with me? Say yes (\"Y\") if "
-             "you do. ribbit\n")
+             "you do. ribbit\n").capitalize()
 
 counter = 0
 
-while play.capitalize() == "Y" or play.capitalize() == "Yes":     # accepts any variation of "yes"
+while play == "Y" or play == "Yes":     # accepts any variation of "yes"
     computer = random.choice(list(loosing_condition.items()))[0]
 
     player = input("Rock, Paper, Scissors, Frog?\n").capitalize()
